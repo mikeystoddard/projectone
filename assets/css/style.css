@@ -1,0 +1,11 @@
+.container {
+    border: 1px solid red;
+}
+ul {
+    list-style-type: none;
+}
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* banner centered
