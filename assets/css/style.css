@@ -8,4 +8,28 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* banner centered
+/* ========== ANNA =============*/
+
+div#banner {
+    height: 300px;
+}
+
+h1 {
+    color: orange;
+    font-size: 50px;
+    text-align: left;
+}
+
+div#section{
+    background-color: #f8f9fa;
+    width: 300px;
+    margin: 30px 30px 100px 70px;
+    height: 1000px;
+
+}
+
+div#blog-content {
+    background-color: #f8f9fa;
+    margin: 30px 50px 100px 0;
+    width: 1000px
+}
