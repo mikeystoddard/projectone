@@ -18,9 +18,15 @@
         <!-- Link to external CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
 
+         <!--Link to the jQuery Library -->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     </head>
 
-    <body style="background-image: url(assets/images/foodbck.jpg);">
+    <body style="background-image: url(assets/images/food/foodbck.jpg);">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Gravitas+One&display=swap" rel="stylesheet">
 
         <!-- Current weather display + LogIn + Searhc Bar  -->
         <div id="userinfo"> 
@@ -38,8 +44,8 @@
         </div>
 
         <!-- Food Banner -->
-        <div id="banner"style="background-image: url(assets/images/campfood.jpg);"> 
-            <h1>Camping Food Blog </h1> 
+        <div id="banner"style="background-image: url(assets/images/food/campfood.jpg);"> 
+            <h1>Camping Food </h1> 
         </div>
 
         <!-- Navbar -->
@@ -50,43 +56,55 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Weather</a>
+                  <a class="nav-link" href="weather.html">Weather</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Trails/Amentities</a>
+                  <a class="nav-link" href="trails.html">Trails/Amentities</a>
                 </li>
                 <li class="nav-item active ">
                   <a class="nav-link" href="#">Food<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Gear</a>
+                    <a class="nav-link" href="gear.html">Gear</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Directions/MAP</a>
+                    <a class="nav-link" href="travel.html">Directions/MAP</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Local Services</a>
+                    <a class="nav-link" href="services.html">Local Services</a>
                 </li>
               </ul>
             </div>
           </nav>
 
           <!-- Content Input from User -->
-          <div id="blog">
-            <div class="row">
-              <div id="section">col-sm-4</div>
-              <div id="blog-content">col-sm-8</div>
+            <div class="camping">
+              <h3>-------------------Camping-------------------</h1>
+            </div>
+            <div id="camp-content" class="camping"></div>
+
+            <div class="backpacking">
+              <h3>-----------------Backpacking----------------</h3>
             </div>
 
+            <div id="backpacking-content" class="backpacking"></div>
 
-            
+           
+          
+
+          <!-- Footer for social media -->
+          <footer>
+              Facebook/Instagram/Address/Phone
+          </footer>
+
+
 
     <!-- ============================================================================================================ -->
         <!-- Link to Moment.js-->
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
 
         <!-- Link to javascript -->
-        <script src="assets/css/app.js"></script>
+        <script src="assets/javascript/app.js"></script>
 
     </body>
 </html>
