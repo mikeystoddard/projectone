@@ -89,12 +89,31 @@ footer{
 }
 
 /* ===========TRAILS============*/
-div.search-bar {
-    margin: 50px auto 20px 20px;
+div#search-bar {
+    margin: 20px;
     width: 300px;
     text-align: left;
+    border: 2px solid lightgrey;
+    padding: 10px;
 }
 
+
+
+div#trail-flow {
+    background-color: yellow;
+    height:300px;
+    margin-top: 10px;
+}
+
+div#weather {
+    background-color: salmon;
+    margin: 20px;
+}
+div#trail-display  {
+    background-color: brown;
+    margin: 20px 0;
+    
+}
 
 
 /* ===========TRAILS============*/
