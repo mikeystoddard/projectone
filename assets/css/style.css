@@ -8,28 +8,93 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* ========== ANNA =============*/
+/* ========== FOOD =============*/
 
 div#banner {
-    height: 300px;
+    height: 350px;
 }
 
 h1 {
-    color: orange;
-    font-size: 50px;
+    color: white;
+    padding: 50px;
+    font-size: 80px;
+    text-align: center;
+    font-family: 'Gravitas One', cursive;
+}
+
+h4{
     text-align: left;
 }
 
-div#section{
-    background-color: #f8f9fa;
+h3 {
+    text-align: center;
+    font-size: 40px;
+}
+
+div.camping {
+    color: black;
+    background-color: rgb(252, 200, 147);
+    margin: 20px auto;
+    width: 1300px;
+    display: flex;
+}
+div#camp-content {
+    height: 500px;
+}
+div#camp {
     width: 300px;
-    margin: 30px 30px 100px 70px;
+    height: 400px;
+    margin: 20px;
+}
+img.payson {
+    width: 300px;
+}
+
+div.backpacking {
+    color: black;
+    background-color: rgb(252, 200, 147);
+    margin: 20px auto;
+    width: 1300px;
+    display: flex;
+}
+div#backpack {
+   width: 300px;
+    height: 400px;
+    margin: 20px;
+}
+img.easyfood {
+    width: 300px;
+    height: 200.25px;
+}
+div#backpacking-content {
+    height: 500px;
+
+}
+
+
+
+
+div#weatherdisplay {
     height: 1000px;
-
-}
-
-div#blog-content {
     background-color: #f8f9fa;
-    margin: 30px 50px 100px 0;
-    width: 1000px
+    width: 1000px;
+    margin: 50px auto;
+
 }
+
+footer{
+    background-color: #F6A24E;
+    height: 200px;
+    color: white;
+}
+
+/* ===========TRAILS============*/
+div.search-bar {
+    margin: 50px auto 20px 20px;
+    width: 300px;
+    text-align: left;
+}
+
+
+
+/* ===========TRAILS============*/
