@@ -1,5 +1,6 @@
 .container {
-    border: 1px solid red;
+    border: 1px solid grey;
+
 }
 ul {
     list-style-type: none;
@@ -8,7 +9,8 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* ========== FOOD =============*/
+/* =======================FOOD ==============================================================================*/
+
 
 div#banner {
     height: 350px;
@@ -22,73 +24,84 @@ h1 {
     font-family: 'Gravitas One', cursive;
 }
 
+h2#account {
+    margin: 30px auto;
+}
 h4{
     text-align: left;
+    padding: 10px;
+    color: white;
 }
 
 h3 {
     text-align: center;
     font-size: 40px;
+    color: white;
 }
 
 div.camping {
     color: black;
-    background-color: rgb(252, 200, 147);
-    margin: 20px auto;
+    background-color: #373737;
+    margin: 100px auto 0;
     width: 1300px;
     display: flex;
+
 }
 div#camp-content {
     height: 500px;
+    margin-top: 0;
+    margin-bottom: 100px;
+    color: white;
 }
 div#camp {
     width: 300px;
     height: 400px;
-    margin: 20px;
+    margin: auto;
+    border: 1px solid grey;
+    
+}
+
+div#text {
+    padding: 10px;
 }
 img.payson {
     width: 300px;
+    padding: 10px;
 }
 
 div.backpacking {
     color: black;
-    background-color: rgb(252, 200, 147);
-    margin: 20px auto;
+    background-color: #373737;
+    margin: 20px auto 0;
     width: 1300px;
     display: flex;
 }
 div#backpack {
    width: 300px;
     height: 400px;
-    margin: 20px;
+    margin: auto;
+    border: 1px solid grey;
+
 }
 img.easyfood {
     width: 300px;
     height: 200.25px;
+    padding: 10px;
 }
 div#backpacking-content {
     height: 500px;
-
-}
-
-
-
-
-div#weatherdisplay {
-    height: 1000px;
-    background-color: #f8f9fa;
-    width: 1000px;
-    margin: 50px auto;
-
+    margin-top: 0;
+    margin-bottom: 300px;
+    color: white;
 }
 
 footer{
-    background-color: #F6A24E;
+    background-color: #373737;
     height: 200px;
     color: white;
 }
 
-/* ===========TRAILS============*/
+/* =====================================TRAILS================================================================*/
 div#search-bar {
     margin: 20px;
     width: 300px;
@@ -106,14 +119,76 @@ div#trail-flow {
 }
 
 div#weather {
-    background-color: salmon;
+    background-color: yellow;
     margin: 20px;
 }
 div#trail-display  {
-    background-color: brown;
+    background-color: yellow;
     margin: 20px 0;
     
 }
 
 
-/* ===========TRAILS============*/
+/* =========== MEMBER ==========================================================================================*/
+
+div#member-signup {
+    width: 500px;
+    height: 600px;
+    background-color: #ffffff;
+    margin: 50px auto 100px;
+    padding: 10px;
+    color: grey;
+    border-radius: 8px;
+}
+#signup-btn {
+    width: 231px;
+    height: 41px;
+    color: white;
+    font-weight: bold;
+    margin: 20px 30px 20px 120px;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, indianred , rgb(250, 195, 93));
+    text-align: center;
+    
+}
+
+.google-button {
+    height: 40px;
+    border-width: 1px;
+    background: white;
+    color: #737373;
+    border-radius: 5px;
+    white-space: nowrap;
+    box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.05);
+    transition-property: background-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+    margin: 5px 30px 20px 120px;
+
+    
+  }
+      
+  .google-button__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 8px 0 8px 8px;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+  }
+  
+  .google-button__icon--plus {
+    width: 30px;
+  }
+  
+  .google-button__text {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 24px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto',arial,sans-serif;
+  }
+  
+
+/* =========== MEMBER ==========================================================================================*/

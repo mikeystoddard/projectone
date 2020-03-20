@@ -1,3 +1,4 @@
+
 /* FOOD Pseudocode
     * Create an object of array including properties as follow:  src, id, 
     * Using JS to create new container that carry photo + description + title + Read More link.
@@ -5,6 +6,19 @@
     * Under the full article, add a comment box where user can insert text.
     * Triangle point to the right to indicate that user can find more article sliding to the left. 
 */
+
+//===========================FIREBASE===========================
+var firebaseConfig = {
+    apiKey: "AIzaSyBLCk9PcjvcBnG_SW7pIXwsx8OOHb2S8YE",
+    authDomain: "outdoor-ready-project.firebaseapp.com",
+    databaseURL: "https://outdoor-ready-project.firebaseio.com",
+    projectId: "outdoor-ready-project",
+    storageBucket: "outdoor-ready-project.appspot.com",
+    messagingSenderId: "474332632525",
+    appId: "1:474332632525:web:cf4c108953e7583896e084"
+  };
+  // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 //===========================FOOD===========================
 $(document).ready(function(){
@@ -22,6 +36,20 @@ var camping = [
         src: "assets/images/food/campingpic.jpg" ,
         headline: "Family Bonding Time Over The Firepit" ,
         text: "You will be pleasantly surprised by the variety of recipes that can be made at the campfire...<a href='food2.html'>Read More</a>"
+    } ,
+
+    {
+        src: "assets/images/food/grillfood.jpg" ,
+        headline: "Chorizo On The Cast Iron" ,
+        text: "You will be pleasantly surprised by the variety of recipes that can be made at the campfire...<a href='food2.html'>Read More</a>"
+
+    },
+
+    {
+        src: "assets/images/food/easycampfood.jpg" ,
+        headline: "Stew On The Grill" ,
+        text: "You will be pleasantly surprised by the variety of recipes that can be made at the campfire...<a href='food2.html'>Read More</a>"
+
     }
 ]
 
@@ -42,6 +70,7 @@ for (var i = 0 ; i < camping.length ; i++) {
 
     // Text Div
     var textDiv = $("<div>")
+    textDiv.attr("id" , "text")
     textDiv.append(camping[i].text);
 
     
@@ -55,32 +84,55 @@ var backpacking = [
     
     {
         src: "assets/images/food/pasta.jpg" ,
-        headline: "",
+        headline: "Quick Easy Food On The Go",
         text: "A question that comes up often is how much food to bring along on a backpacking trip...<a href='food2.html'>Read More</a>"
     } ,
     
     {
         src: "assets/images/food/easyfood.jpg" ,
-        headline:" ",
+        headline:"Nourish Youself On A Long Hike",
         text: "You can take most foods backpacking, but it’s best to stick with foods that are portable, lightweight and not too bulky...<a href='food2.html'>Read More</a>"
+    } ,
+
+    {
+        src: "assets/images/food/macaroni.jpg" ,
+        headline:"Lightweight Versions Of Your Favorite Food",
+        text: "Macaroni and cheese is a comfort food staple; and boxed versions cook up well in the backcountry....<a href='food2.html'>Read More</a>"
+    } ,
+
+    {
+        src: "assets/images/food/dehydate.jpg" ,
+        headline:"Dehydrate Your Own Meals",
+        text: "While it does take more time and preparation, dehydrating your own backpacking meals can save you money...<a href='food2.html'>Read More</a>"
     }
 ]
 for (var j = 0 ; j < backpacking.length ; j++) {
 
+     // Content Div
     var backpackDiv = $("<div>");
     backpackDiv.attr("id", "backpack");
 
+     // Image Div
     var imageDiv = $("<img>");
     imageDiv.attr("src", backpacking[j].src);
     imageDiv.addClass("easyfood")
 
+    // Headline Div
+    var headlineDiv = $("<h4>");
+    headlineDiv.append(backpacking[j].headline);
     
-    backpackDiv.append(imageDiv);
+    // Text Div
+    var textDiv = $("<div>");
+    textDiv.attr("id", "text")
+    textDiv.append(backpacking[j].text);
+
+
+    backpackDiv.append([imageDiv, headlineDiv, textDiv]);
     $("#backpacking-content").append(backpackDiv)
 
 }
 
-//======================================================
+//============================================================================================================
 
 
 
