@@ -130,7 +130,8 @@ div#trail-display  {
 /* =========== MEMBER SIGN UP==========================================================================================*/
 h2#account {
     margin: 10px auto;
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid royalblue;
+    color: royalblue;
 }
 
 div#member-signup {
@@ -139,7 +140,7 @@ div#member-signup {
     background-color: #ffffff;
     margin: 30px auto 30px;
     padding: 10px;
-    color: grey;
+    color: #333333;
     border-radius: 8px;
 }
 #signup-btn {
@@ -149,7 +150,7 @@ div#member-signup {
     font-weight: bold;
     margin: 20px 30px 20px 120px;
     border-radius: 5px;
-    background-image: linear-gradient(to right, indianred , rgb(250, 195, 93));
+    background-image: linear-gradient(to right, steelblue , royalblue);
     text-align: center;
     
 }
@@ -207,6 +208,7 @@ div#member-signin {
 
 h2#signin {
     margin: 30px auto;
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid royalblue;
+    color: royalblue;
 }
 /* =========== MEMBER SIGN IN ==========================================================================================*/
