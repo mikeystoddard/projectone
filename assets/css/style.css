@@ -24,9 +24,7 @@ h1 {
     font-family: 'Gravitas One', cursive;
 }
 
-h2#account {
-    margin: 30px auto;
-}
+
 h4{
     text-align: left;
     padding: 10px;
@@ -129,13 +127,17 @@ div#trail-display  {
 }
 
 
-/* =========== MEMBER ==========================================================================================*/
+/* =========== MEMBER SIGN UP==========================================================================================*/
+h2#account {
+    margin: 10px auto;
+    border-bottom: 2px solid grey;
+}
 
 div#member-signup {
     width: 500px;
-    height: 600px;
+    height: 650px;
     background-color: #ffffff;
-    margin: 50px auto 100px;
+    margin: 30px auto 30px;
     padding: 10px;
     color: grey;
     border-radius: 8px;
@@ -191,4 +193,20 @@ div#member-signup {
   }
   
 
-/* =========== MEMBER ==========================================================================================*/
+/* =========== MEMBER SIGN IN ==========================================================================================*/
+div#member-signin {
+    width: 500px;
+    height: 450px;
+    background-color: #ffffff;
+    margin: 50px auto 50px;
+    padding: 10px;
+    color: grey;
+    border-radius: 8px;
+
+}
+
+h2#signin {
+    margin: 30px auto;
+    border-bottom: 2px solid grey;
+}
+/* =========== MEMBER SIGN IN ==========================================================================================*/
