@@ -20,7 +20,8 @@ var firebaseConfig = {
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-//===========================FOOD===========================
+//============= FOOD ===============================================================================================
+
 $(document).ready(function(){
 
 //CAMPING DIV 
@@ -132,18 +133,59 @@ for (var j = 0 ; j < backpacking.length ; j++) {
 
 }
 
-//============================================================================================================
+//=============SIGN IN - SIGn UP===============================================================================================
+/*Add an event listener to sign up button 
+    *Save the data into firebase database 
+    *When user click signup, populate user's own info on the page
+    */
+
+    var database = firebase.database();
+
+    $("#signup-btn").on("click" , function(){
+
+        event.preventDefault();
+
+        // RETRIEVE INPUT VALUE FROM THE USER
+        var email = $("#email").val().trim();
+        var userName = $("#username").val().trim();
+        var passWord = $("#password").val().trim();
+
+        //CREATE A OBJECT that contain user data 
+
+        var userInfo = {
+            enterEmail : email ,
+            enterUserName : userName ,
+            enterPassword : passWord
+        };
+
+
+        //SAVE those data TO FIREBASE DATABASE
+        database.ref().push(userInfo);
+
+        //EMPTY the text-boxes for next input
+        $("#email").val("");
+        $("#username").val("");
+        $("#password").val("");
+
+    });
+
+        // LISTEN for changes in value and use CALLBACK to retrieve the data 
+        database.ref().on("child_added" , function(childSnapshot) {
+
+            var userUserName = childSnapshot.val().enterUserName;
+            //var userPassword = childSnapshot.val().enterPassword;
+
+            $("#login-btn").on("click" , function() {
+                $("#signup-btn").text(enterUserName);
+            })
+
+        })
 
 
 
 
 
-
-
-
-
-
-
+//=============SIGN IN - SIGn UP===============================================================================================
 
 
 

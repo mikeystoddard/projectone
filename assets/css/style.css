@@ -100,6 +100,19 @@ footer{
 }
 
 /* =====================================TRAILS================================================================*/
+button#createaccount-btn {
+    margin-right: 20px;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+button#login-btn {
+    border: 2px solid lightskyblue;
+    border-radius: 5px; 
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 div#search-bar {
     margin: 20px;
     width: 300px;
@@ -136,7 +149,7 @@ h2#account {
 
 div#member-signup {
     width: 500px;
-    height: 650px;
+    height: 500px;
     background-color: #ffffff;
     margin: 30px auto 30px;
     padding: 10px;
@@ -153,6 +166,9 @@ div#member-signup {
     background-image: linear-gradient(to right, steelblue , royalblue);
     text-align: center;
     
+}
+a {
+    color: rgb(163, 159, 159);
 }
 
 .google-button {
@@ -201,7 +217,7 @@ div#member-signin {
     background-color: #ffffff;
     margin: 50px auto 50px;
     padding: 10px;
-    color: grey;
+    color: #333333;
     border-radius: 8px;
 
 }
@@ -210,5 +226,12 @@ h2#signin {
     margin: 30px auto;
     border-bottom: 2px solid royalblue;
     color: royalblue;
+}
+
+div#forgotu {
+    float: right;
+}
+div#forgotp {
+    float: left;
 }
 /* =========== MEMBER SIGN IN ==========================================================================================*/
