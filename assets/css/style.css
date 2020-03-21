@@ -235,3 +235,9 @@ div#forgotp {
     float: left;
 }
 /* =========== MEMBER SIGN IN ==========================================================================================*/
+
+#bannergear {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px
+}
