@@ -185,13 +185,97 @@ for (var j = 0 ; j < backpacking.length ; j++) {
 
 
 
-//=============SIGN IN - SIGn UP===============================================================================================
+//============= TRAILS - Weather ===============================================================================================
+$("#search-btn").on("click" , function () {
+
+var userDestination = $("#name").val().trim();
+console.log(userDestination)
+
+$("#name").val("");
+
+// This is our API key. Add your own API key between the ""
+var APIKeyWeather = "81770ad1513f8ecb899a3460a5199238";
+
+// Here we are building the URL we need to query the database
+var queryURLWeather= "https://api.openweathermap.org/data/2.5/weather?q=" + userDestination + "&appid=" + APIKeyWeather;
+
+// We then created an AJAX call
+$.ajax({
+    url: queryURLWeather,
+    method: "GET"
+  }).then(function(response) {
+
+      // Create CODE HERE to Log the queryURL
+      console.log(queryURLWeather);
+
+      // Create CODE HERE to log the resulting object
+      console.log(response);
+
+       // Create CODE HERE to transfer content to HTML
+       var wind = $("#wind").text("Wind speed:" + response.wind.speed);
+       var temperature = $("#temperature").text("Temperature:" + response.main.temp);
+       var humidity = $("#humidity").text("Humidity:" + response.main.humidity);
+       var description = $("#description").text("Description:" + " " + response.weather[0].description);
+       var icon = $("icon").text(response.weather[0].icon);
+       var id = $("#id").text(response.weather[0].id);
+       var main= $("#main").text(response.weather[0].main);
+
+       // Create CODE HERE to calculate the temperature (converted from Kelvin)
+      var temp = response.main.temp;
+      var farenheit = Math.round(((temp - 273) * 1.80 + 32));
+      // Hint: To convert from Kelvin to Fahrenheit: F = (K - 273.15) * 1.80 + 32
+      // Create CODE HERE to dump the temperature content into HTML
+      $("#temperature").text("Temperature:" + " " + farenheit + "F");
+    })
+
+ //============= TRAILS - Hiking Trails ===============================================================================================
+
+
+ 
+
+
+ //============= GeoLocation - tracking current location ==========================
+
+
+    if (navigator.geolocation) //Check if Geolocation is avalaible 
+    navigator.geolocation.getCurrentPosition(function(position) { //access to user position using getCurrentPosition and use the callback function to process the returned position object.
+        console.log(position);
+
+
+        var APIKeyTrail = "200707737-a8a73974523ce2a5c9e369f971f9a23e";
+
+        var queryURLTrail = "https://www.hikingproject.com/data/get-trails?lat="+ position.coords.latitude + "&lon=" + position.coords.longitude + "&key=" + APIKeyTrail;
+    
+        
+        $.ajax({
+            url: queryURLTrail,
+            method: "GET"
+          }).then(function(response) {
+        
+              console.log(queryURLTrail);
+        
+              console.log(response);
+
+              var trailContent = response;
+            console.log(trailContent);
+        
+          }) 
+
+    }) 
+    else ("Location is not supported");
+});
 
 
 
 
 
 
+
+
+
+
+
+//============= TRAILS - Hiking Trails ===============================================================================================
 
 
 
