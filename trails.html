@@ -21,6 +21,13 @@
          <!--Link to the jQuery Library -->
          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+         <!-- Leaflet.js - JavaScript library for mobile-friendly interactive maps -->
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="crossorigin=""></script>
+
+
     </head>
 
     <body style="background-image: url(assets/images/geometric-leaves/geometric-leaves.png);">
@@ -78,16 +85,36 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-default">Destination</span>
                     </div>
-                        <input id="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder ="Where to..." >
+                        <input id="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder ="City" >
                 </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Location</span>
+                  </div>
+                      <input id="park" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder ="National Park" >
+              </div>
+
                 <button id="search-btn" type="button" class="btn btn-warning">Search</button>
 
-                <div id="trail-flow">Nearby trails are displayed here</div>
+                <div id="trail-flow"></div>
             </div>
 
-            <div class="col-6" id="trail-display"> The trail that user click will be displayed here with additional trail information</div>
+            <div class="col-6" id="trail-display"> 
+                <div id="mapid"></div>
+            </div>
                 
-            <div class="col" id="weather"> 6-days Weather Forecast at the searched location</div>
+            <div class="col" id="weather"> 
+              <div id="wind"></div>
+              <div id="temperature"></div>
+              <div id="humidity"></div>
+              <div id="precipitation"></div>
+              <div id="description"></div>
+              <div id="icon"></div>
+              <div id="id"></div>
+              <div id="main"></div>
+             
+            </div>
         </div>
     </div>
 
