@@ -295,7 +295,7 @@ $.ajax({
         //============= Leaflet.js - interactive map ==========================
             // initialize the map on the "map" div with a given center and zoom
 
-            
+            function setMap (lat , lon) {
             var map = L.map('mapid').setView([51.505, -0.09],13);
 
             var marker = L.marker([0,0]).addTo(map); // Add Marker (DropIn)
@@ -305,6 +305,7 @@ $.ajax({
             var tileURL = "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
             var tiles =L.tileLayer(tileURL, {attribution});
             tiles.addTo(map);
+            }
 
    
     
