@@ -241,3 +241,10 @@ div#forgotp {
     background-size: cover;
     height: 350px
 }
+
+/*=========LOCAL SERVICES=======================================================*/
+#bannerlocal {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+}
