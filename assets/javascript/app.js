@@ -193,6 +193,8 @@ console.log(userDestination)
 
 $("#name").val("");
 
+//const icon = new Skycons ( { color: '#222'})
+
 // This is our API key. Add your own API key between the ""
 var APIKeyWeather = "81770ad1513f8ecb899a3460a5199238";
 
@@ -214,29 +216,56 @@ $.ajax({
        // Create CODE HERE to transfer content to HTML
        var wind = $("#wind").text("Wind speed:" + response.wind.speed);
        var temperature = $("#temperature").text("Temperature:" + response.main.temp);
+        var maxTemp = $("#maxtemp").text("Max Temp:" + response.main.temp_max);
+        var minTemp = $("#mintemp").text("Min Temp:" + response.main.temp_min);
        var humidity = $("#humidity").text("Humidity:" + response.main.humidity);
-       var description = $("#description").text("Description:" + " " + response.weather[0].description);
-       var icon = $("icon").text(response.weather[0].icon);
-       var id = $("#id").text(response.weather[0].id);
-       var main= $("#main").text(response.weather[0].main);
 
-       // Create CODE HERE to calculate the temperature (converted from Kelvin)
+       var iconcode = response.weather[0].icon; //Display the icon from openweathermap 
+       var iconURL = "http://openweathermap.org/img/w/" + iconcode + '.png'
+            var icon = $("#wicon").attr('src', iconURL);
+
+       var description = $("#description").text(response.weather[0].description);
+
+
+      // Create CODE HERE to calculate the temperature (converted from Kelvin)
       var temp = response.main.temp;
-      var farenheit = Math.round(((temp - 273) * 1.80 + 32));
-      // Hint: To convert from Kelvin to Fahrenheit: F = (K - 273.15) * 1.80 + 32
-      // Create CODE HERE to dump the temperature content into HTML
-      $("#temperature").text("Temperature:" + " " + farenheit + "F");
+      var maxtemp = response.main.temp_max;
+      var mintemp = response.main.temp_min;
+
+        // Hint: To convert from Kelvin to Fahrenheit: F = (K - 273.15) * 1.80 + 32
+        var farenheit = Math.round(((temp - 273) * 1.80 + 32));
+        var maxfarenheit = Math.round(((maxtemp - 273) * 1.80 + 32));
+        var minfarenheit = Math.round(((mintemp - 273) * 1.80 + 32));
+      
+        $("#temperature").text("Temperature:" + " " + farenheit + "F");
+        $("#maxtemp").text("Max Temp" + " " + maxfarenheit + "F");
+        $("#mintemp").text("Min Temp:" + " " + minfarenheit + "F");
+
+      // Latitude and Longitude
+      var latitude = response.coord.lat;
+      var longtitude = response.coord.lon;
+      var lat = $("#lat").text("Lat:" + response.coord.lat);
+      var lon = $("#lon").text("Lon:" + response.coord.lon);
+
+      getTrails(latitude , longtitude);
+        }) 
+
     })
+
+
+    
 
  //============= TRAILS - Hiking Trails ===============================================================================================
 
 
- 
 
+    //============= GeoLocation - tracking current location ==========================
 
- //============= GeoLocation - tracking current location ==========================
+    function getTrails (lat , lon){
+        console.log(lat);
+        console.log(lon);
 
-
+    
     if (navigator.geolocation) //Check if Geolocation is avalaible 
     navigator.geolocation.getCurrentPosition(function(position) { //access to user position using getCurrentPosition and use the callback function to process the returned position object.
         console.log(position);
@@ -244,7 +273,7 @@ $.ajax({
 
         var APIKeyTrail = "200707737-a8a73974523ce2a5c9e369f971f9a23e";
 
-        var queryURLTrail = "https://www.hikingproject.com/data/get-trails?lat="+ position.coords.latitude + "&lon=" + position.coords.longitude + "&key=" + APIKeyTrail;
+        var queryURLTrail = "https://www.hikingproject.com/data/get-trails?lat="+ lat + "&lon=" + lon + "&key=" + APIKeyTrail;
     
         
         $.ajax({
@@ -254,18 +283,35 @@ $.ajax({
         
               console.log(queryURLTrail);
         
-              console.log(response);
-
-              var trailContent = response;
-            console.log(trailContent);
+              console.log(response)
         
-          }) 
+            }) 
 
     }) 
-    else ("Location is not supported");
-});
+        else ("Location is not supported");
+    
+}
+
+        //============= Leaflet.js - interactive map ==========================
+            // initialize the map on the "map" div with a given center and zoom
+
+            
+            var map = L.map('mapid').setView([51.505, -0.09],13);
+
+            var marker = L.marker([0,0]).addTo(map); // Add Marker (DropIn)
+
+            var attribution = '&copy; <a href ="http://www.openstreetmap.org/copyright"> Open Street Map </a> contributors' ;
+
+            var tileURL = "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+            var tiles =L.tileLayer(tileURL, {attribution});
+            tiles.addTo(map);
+
+   
+    
+    
 
 
+        
 
 
 
@@ -314,4 +360,4 @@ $.ajax({
 
 
 
-}) //end of document.ready
+})
