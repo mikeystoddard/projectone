@@ -8,7 +8,7 @@
 */
 
 //===========================FIREBASE===========================
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyBLCk9PcjvcBnG_SW7pIXwsx8OOHb2S8YE",
     authDomain: "outdoor-ready-project.firebaseapp.com",
     databaseURL: "https://outdoor-ready-project.firebaseio.com",
@@ -19,6 +19,17 @@ var firebaseConfig = {
   };
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+/*var firebaseConfig = {
+    apiKey: "AIzaSyAfGDfqvtbUTbW1tNNr1GS8tMdhNDLCX24",
+    authDomain: "signup-signin-814dd.firebaseapp.com",
+    databaseURL: "https://signup-signin-814dd.firebaseio.com",
+    projectId: "signup-signin-814dd",
+    storageBucket: "signup-signin-814dd.appspot.com",
+    messagingSenderId: "497412353143",
+    appId: "1:497412353143:web:ba6d17e74a942204bfaa72"
+  };
+  firebase.initializeApp(firebaseConfig);*/
 
 //============= FOOD ===============================================================================================
 
@@ -139,16 +150,16 @@ for (var j = 0 ; j < backpacking.length ; j++) {
     *When user click signup, populate user's own info on the page
     */
 
-    var database = firebase.database();
+   var database = firebase.database();
 
     $("#signup-btn").on("click" , function(){
 
         event.preventDefault();
 
         // RETRIEVE INPUT VALUE FROM THE USER
-        var email = $("#email").val().trim();
-        var userName = $("#username").val().trim();
-        var passWord = $("#password").val().trim();
+        var email = $("#email").val();
+        var userName = $("#username").val();
+        var passWord = $("#password").val();
 
         //CREATE A OBJECT that contain user data 
 
@@ -180,6 +191,8 @@ for (var j = 0 ; j < backpacking.length ; j++) {
             })
 
         })
+
+    
 
 
 
@@ -291,6 +304,12 @@ $.ajax({
 
               var trailList = response.trails;
               console.log(trailList);
+
+              var medImg = trailList[0].imgMedium;
+              console.log(medImg);
+              var displayPhoto = $("<img id='display-photo'>");
+                $(displayPhoto).attr("src" , trailList[0].imgMedium);
+              $("#trail-img").append(displayPhoto);
             
               for (var i=0; i < trailList.length ; i++) {
 
@@ -316,6 +335,13 @@ $.ajax({
 
                 $(newDiv).append([picDiv,trailName, trailStar, trailLevel, trailElevation, trailLocation, trailSummary]);
                 $("#search-bar").append(newDiv);
+                
+
+                /*var latitude = trailList[i].latitude;
+                var longitude  = trailList[i].longitude;
+
+                getTrails(latitude, longtitude);
+                setMap(latitude , longtitude);*/
 
               } 
 

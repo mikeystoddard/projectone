@@ -9,6 +9,7 @@
         <!-- Firebase References -->
         <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-auth.js"></script>
 
         <!-- Adding Media Query to make the page mobile responsive -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -89,15 +90,13 @@
                 
         <div class="row" id="trail">
           
-            <div class="col" id="search-bar">
-              <!-- <img id="trail-pics"  atl="trail photos"> -->
-            </div>
+            <div class="col" id="search-bar"></div>
 
 
             <div class="col-6" id="trail-display"> 
               <div id="trail-img"></div>
               <div id="trail-info"></div>
-              <!-- <div id="mapid"></div> -->
+              <div id="mapid"></div>
             </div>
            
             <div class="col" class="weather"> 
@@ -122,15 +121,6 @@
                   <td id="wind"></td>
                 </tr>
               </table>
-              <!-- <div id="wind"></div> -->
-              <!-- <div id="temperature"></div> -->
-              <!-- <div id="maxtemp"></div> -->
-              <!-- <div id="mintemp"></div> -->
-              <!-- <div id="humidity"></div> -->
-              <!-- <div id="description"></div> -->
-              <!-- <div id="icon"> -->
-                <!-- <img id="wicon"  atl="Weather icon"> -->
-              <!-- </div> -->
             
              
             </div>

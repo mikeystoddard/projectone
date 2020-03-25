@@ -46,6 +46,7 @@ div.camping {
     margin: 100px auto 0;
     width: 1300px;
     display: flex;
+    border-radius: 5px;
 
 }
 div#camp-content {
@@ -53,12 +54,16 @@ div#camp-content {
     margin-top: 0;
     margin-bottom: 100px;
     color: white;
+    border-radius: 5px;
+
 }
 div#camp {
     width: 300px;
     height: 400px;
     margin: auto;
     border: 1px solid grey;
+    border-radius: 5px;
+
     
 }
 
@@ -68,6 +73,8 @@ div#text {
 img.payson {
     width: 300px;
     padding: 10px;
+    border-radius: 5px;
+
 }
 
 div.backpacking {
@@ -76,24 +83,32 @@ div.backpacking {
     margin: 20px auto 0;
     width: 1300px;
     display: flex;
+    border-radius: 5px;
+
 }
 div#backpack {
    width: 300px;
     height: 400px;
     margin: auto;
     border: 1px solid grey;
+    border-radius: 5px;
+
 
 }
 img.easyfood {
     width: 300px;
     height: 200.25px;
     padding: 10px;
+    border-radius: 5px;
+
 }
 div#backpacking-content {
     height: 500px;
     margin-top: 0;
     margin-bottom: 300px;
     color: white;
+    border-radius: 5px;
+
 }
 
 footer{
@@ -170,7 +185,11 @@ div#trail-display  {
     border: 1px solid rgb(177, 187, 197);
     border-radius: 5px;
     
-    
+}
+img#display-photo{
+    width: 702px;
+    height: 350px;
+    border-radius:5px;
 }
 
 div#searcharea {
