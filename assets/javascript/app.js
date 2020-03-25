@@ -188,6 +188,10 @@ for (var j = 0 ; j < backpacking.length ; j++) {
 //============= TRAILS - Weather ===============================================================================================
 $("#search-btn").on("click" , function () {
 
+var now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+console.log(now);
+$("#date").text(now);
+
 var userDestination = $("#name").val().trim();
 console.log(userDestination)
 
@@ -214,11 +218,11 @@ $.ajax({
       console.log(response);
 
        // Create CODE HERE to transfer content to HTML
-       var wind = $("#wind").text("Wind speed:" + response.wind.speed);
-       var temperature = $("#temperature").text("Temperature:" + response.main.temp);
-        var maxTemp = $("#maxtemp").text("Max Temp:" + response.main.temp_max);
-        var minTemp = $("#mintemp").text("Min Temp:" + response.main.temp_min);
-       var humidity = $("#humidity").text("Humidity:" + response.main.humidity);
+       var wind = $("#wind").text("Wind:" + " " + response.wind.speed + "mph");
+       var temperature = $("#temperature").text(response.main.temp);
+        var maxTemp = $("#maxtemp").text("Max Temp:" + " " + response.main.temp_max);
+        var minTemp = $("#mintemp").text("Min Temp:" + " " + response.main.temp_min);
+       var humidity = $("#humidity").text("Humidity:"+ " " + response.main.humidity + "%");
 
        var iconcode = response.weather[0].icon; //Display the icon from openweathermap 
        var iconURL = "http://openweathermap.org/img/w/" + iconcode + '.png'
@@ -237,8 +241,8 @@ $.ajax({
         var maxfarenheit = Math.round(((maxtemp - 273) * 1.80 + 32));
         var minfarenheit = Math.round(((mintemp - 273) * 1.80 + 32));
       
-        $("#temperature").text("Temperature:" + " " + farenheit + "F");
-        $("#maxtemp").text("Max Temp" + " " + maxfarenheit + "F");
+        $("#temperature").text(farenheit + "F");
+        $("#maxtemp").html("Max temp:" + maxfarenheit + "F");
         $("#mintemp").text("Min Temp:" + " " + minfarenheit + "F");
 
       // Latitude and Longitude
@@ -248,6 +252,7 @@ $.ajax({
       var lon = $("#lon").text("Lon:" + response.coord.lon);
 
       getTrails(latitude , longtitude);
+      setMap (latitude , longtitude);
         }) 
 
     })
@@ -274,8 +279,7 @@ $.ajax({
         var APIKeyTrail = "200707737-a8a73974523ce2a5c9e369f971f9a23e";
 
         var queryURLTrail = "https://www.hikingproject.com/data/get-trails?lat="+ lat + "&lon=" + lon + "&key=" + APIKeyTrail;
-    
-        
+
         $.ajax({
             url: queryURLTrail,
             method: "GET"
@@ -284,21 +288,53 @@ $.ajax({
               console.log(queryURLTrail);
         
               console.log(response)
-        
+
+              var trailList = response.trails;
+              console.log(trailList);
+            
+              for (var i=0; i < trailList.length ; i++) {
+
+                var newDiv = $("<div id='whole-container'>");
+                var picDiv = $("<img id='trail-photo'>");
+                    $(picDiv).attr('src', trailList[i].imgSmallMed);
+                console.log(picDiv);
+                var trailName = $("<div id='trail-name'>");
+                var trailStar = $("<div id='trail-stars'>");
+                var trailLevel = $("<div id='level'>");
+                var trailElevation = $("<div id='ascent'>");
+                var trailLocation = $("<div id='location'>");
+                var trailSummary = $("<div id='summary'>");
+
+
+                $(picDiv).append(trailList[i].imgSmall);
+                $(trailName).append(trailList[i].name);
+                $(trailStar).append("<b>Rating</b>:" + " " + trailList[i].stars);
+                $(trailLevel).append("<b>Difficulty Level</b>:" + " " + trailList[i].difficulty);
+                $(trailElevation).append("<b>Elevation</b>:" + " " + trailList[i].ascent + "ft");
+                $(trailLocation).append("<b>Location</b>:" + " " + trailList[i].location);
+                $(trailSummary).append("<b>Summary</b>:" + " " + trailList[i].summary);
+
+                $(newDiv).append([picDiv,trailName, trailStar, trailLevel, trailElevation, trailLocation, trailSummary]);
+                $("#search-bar").append(newDiv);
+
+              } 
+
             }) 
+
 
     }) 
         else ("Location is not supported");
-    
-}
+    }
+        
 
+        
         //============= Leaflet.js - interactive map ==========================
             // initialize the map on the "map" div with a given center and zoom
 
             function setMap (lat , lon) {
-            var map = L.map('mapid').setView([51.505, -0.09],13);
+            var map = L.map('mapid').setView([lat, lon],13);
 
-            var marker = L.marker([0,0]).addTo(map); // Add Marker (DropIn)
+            var marker = L.marker([lat , lon]).addTo(map); // Add Marker (DropIn)
 
             var attribution = '&copy; <a href ="http://www.openstreetmap.org/copyright"> Open Street Map </a> contributors' ;
 
