@@ -241,3 +241,27 @@ div#forgotp {
     background-size: cover;
     height: 350px
 }
+
+/*=========LOCAL SERVICES=======================================================*/
+div#bannerlocal {
+    background-image: url('https://www.oldgaspumpguys.com/uploads/9/4/2/5/94251485/web-site-main-edited-1.jpg');
+    background-size: 100% 100%;
+    resize: inherit;
+    height: 350px;
+}
+
+div#userresults {
+    background-color: #f6a24e;
+    height:300px;
+    margin-top: 10px;
+}
+
+div#results {
+    background-color: #f6a24e;
+    margin: 20px;
+}
+div#nearbybusiness  {
+    background-color: #f6a24e;
+    margin: 20px 0;
+    
+}

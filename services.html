@@ -19,6 +19,7 @@
 
 <body style="background-image: url(assets\images\ripples\ripples.png);">
 
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Gravitas+One&display=swap" rel="stylesheet">
 
@@ -34,41 +35,91 @@
                 <button id="login-btn" type="submit"><a href="signin.html">Login</a></button>
             </form>
         </nav>
-
         <!--Local Banner-->
-        <div id="bannerlocal"style="background-image: url(.assets\images\gasstation.jpg);"></div>
-            <h1>Local Services</h1>
-        </div>
-
-        <!--Nav Bar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="trails.html">Trails/Amentities</a>
-                    </li>
-                    <li class="nav-item active ">
-                        <a class="nav-link" href="food.html">Food<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gear.html">Gear</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Local Services</a>
-                    </li>
-                </ul>
+        <div class="body">
+            <div id="bannerlocal"
+                style="background: url(https://www.oldgaspumpguys.com/uploads/9/4/2/5/94251485/web-site-main-edited-1.jpg);"
+                background-size: 100% 100%>
+                <h1>Local Services</h1>
             </div>
-        </nav>
+        </div>
+    </div>
+    <!--Nav Bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="trails.html">Trails/Amentities</a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link" href="food.html">Food<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gear.html">Gear</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Local Services</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-        <!--User input yelp search-->
-        <div class="card" id="Yelp search">
-            <div class="card-box">
-                <h3>Search Yelp</h3>
+    
+    <div>
+        <div class="row">
+
+            <div class="col" id="search-bar">
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">City</span>
+                    </div>
+                        <input id="City" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder ="City" >
+                </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Type of Business</span>
+                  </div>
+                      <input id="tupeofbusiness" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder ="National Park" >
+              </div>
+
+                <button id="search-btn2" type="button" class="btn btn-warning">Search</button>
+
+                <div id="userresults">
+
+                </div>
             </div>
 
-
+            <div class="col-6" id="results"> 
+                <div id="mapid"></div>
+            </div>
+                
+            <div class="col" id="nearbybusiness"> 
+              <div id="1"></div>
+              <div id="2"></div>
+              <div id="3"></div>
+              <div id="4"></div>
+                          
+            </div>
         </div>
+    </div>
+
+
+<!-- ============================================================================================================ -->
+     
+          <!-- Footer for social media -->
+            <footer>
+            Facebook/Instagram/Address/Phone
+            </footer>
+
+
+
+
+</body>
+
+</html>

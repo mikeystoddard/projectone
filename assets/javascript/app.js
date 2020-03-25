@@ -277,7 +277,11 @@ $.ajax({
 
 //============= TRAILS - Hiking Trails ===============================================================================================
 
+//========Local services=================================
 
+
+//===this is the apikey for searching businesses on yelp
+var APIKeylocalbusiness = "48ec29f004msh339d6cdff1b9de4p14260bjsne474344e2e4e" 
 
 
 
