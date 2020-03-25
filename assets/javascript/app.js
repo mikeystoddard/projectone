@@ -291,45 +291,31 @@ $.ajax({
 
               var trailList = response.trails;
               console.log(trailList);
-
-              trailList.forEach(function(each) {
-                console.log(each.name);
-
-                var name = each.name;
-                var image = each.smallImg;
-                var difficulty = each.difficulty;
-                console.log(difficulty);
-                var stars = each.stars;
-                console.log(stars);
-                var ascent = each.ascent;
-                console.log(ascent);
-                var location = each.location;
-                console.log(location);
-                var summary = each.summary;
-                console.log(summary);
-
-            });
             
-              for (var j=0; j < response.trails ; j++) {
+              for (var i=0; i < trailList.length ; i++) {
 
-                var parentDiv = $("<div id='trail-ctn'>");
-                console.log(parentDiv);
+                var newDiv = $("<div id='whole-container'>");
+                var picDiv = $("<img id='trail-photo'>");
+                    $(picDiv).attr('src', trailList[i].imgSmallMed);
+                console.log(picDiv);
+                var trailName = $("<div id='trail-name'>");
+                var trailStar = $("<div id='trail-stars'>");
+                var trailLevel = $("<div id='level'>");
+                var trailElevation = $("<div id='ascent'>");
+                var trailLocation = $("<div id='location'>");
+                var trailSummary = $("<div id='summary'>");
 
-                var image = $("<img>").text(image);
 
-                var nameDiv = $("<div id='parkname'>").text(trailList.name);
-                console.log (nameDiv);
+                $(picDiv).append(trailList[i].imgSmall);
+                $(trailName).append(trailList[i].name);
+                $(trailStar).append("<b>Rating</b>:" + " " + trailList[i].stars);
+                $(trailLevel).append("<b>Difficulty Level</b>:" + " " + trailList[i].difficulty);
+                $(trailElevation).append("<b>Elevation</b>:" + " " + trailList[i].ascent + "ft");
+                $(trailLocation).append("<b>Location</b>:" + " " + trailList[i].location);
+                $(trailSummary).append("<b>Summary</b>:" + " " + trailList[i].summary);
 
-                var level = $("<div id='difficulty'>").text(response.trails[j].difficulty);
-
-                var stars = $("<div id='stars'>").text(response.trails[j].stars);
-
-                var location = $("<div id= 'location'").text(response.trails[j].location);
-
-                parentDiv.text( nameDiv, level, stars, location);
-                
-                $("#trail-flow").append(image);
-
+                $(newDiv).append([picDiv,trailName, trailStar, trailLevel, trailElevation, trailLocation, trailSummary]);
+                $("#search-bar").append(newDiv);
 
               } 
 

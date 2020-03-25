@@ -126,6 +126,43 @@ div#search-bar {
     background-color:  rgb(245, 245, 245);
 }
 
+img#trail-photo {
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+ div#whole-container{
+    border: 1px solid black; 
+    margin-bottom: 30px;
+    padding: 10px;
+ }
+
+ div#trail-name {
+    font-weight: bolder;
+    margin-top: 10px;
+    font-size: 25px;
+    color: steelblue;
+ }
+
+ div#trail-stars {
+    margin-top: 20px;
+ }
+ div#level {
+    margin-top: 5px;
+ }
+ div#ascent {
+    margin-top: 5px;
+ }
+ div#location {
+    margin-top: 5px;
+ }
+ div#summary {
+    margin-top: 5px;
+ }
+
+
+
 div#trail-display  {
     background-color:  rgb(245, 245, 245);
     margin: 20px 0;
@@ -150,11 +187,6 @@ div#trail{
 
 
 
-/*div#trail-flow {
-    background-color: rgb(224, 224, 224);;
-    height:300px;
-    margin-top: 10px;
-}*/
 div#trail-img {
     height: 350px;
     border: 1px solid rgb(177, 187, 197);
@@ -320,9 +352,9 @@ div#forgotp {
 /* =========== INTERACTIVE MAP - LEAFLET.js ==========================================================================================*/
 
 div#mapid {
-    height: 180px;
+    height: 250px;
     border-radius: 5px;
-    border: 1px solid grey;
+    border: 1px solid rgb(177, 187, 197);
 }
 
 
