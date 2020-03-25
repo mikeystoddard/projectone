@@ -258,3 +258,18 @@ div#mapid {
     height: 350px;
 }
 
+
+
+/*====Gear=========*/
+.everythinggear {
+    image: center;
+}
+#backpackp, #tentp, #accessoriesp, #hammockp {
+font-family: 'Times New Roman', Times, serif;
+font-size: 20px;
+color: forestgreen
+}
+
+#backpacksheader {
+    color: grey;
+}
