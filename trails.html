@@ -1,19 +1,10 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-=======
+  <title>Trails</title>
 
-<html>
-    <head>
-
-        <title>Trails</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Firebase References -->
         <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
@@ -40,7 +31,7 @@
 
     </head>
 
-    <body style="background-image: url(assets/images/geometric-leaves/geometric-leaves.png);">
+    <body>
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css?family=Gravitas+One&display=swap" rel="stylesheet">
@@ -49,7 +40,7 @@
         <div id="userinfo"> 
 
              <!-- LogIn -->
-            <nav id="userinfo" class="navbar navbar-dark bg-dark" style="border-bottom: 1px solid white;">
+            <nav id="userinfo" class="navbar navbar-dark bg-dark" style ='border-bottom: 1px solid white;'>
                 <h3>Outdoor Ready</h3>
                 <form class="form-inline">
                   <button id="createaccount-btn" type="submit"><a href="member.html">Create an account</a></button>
@@ -60,7 +51,7 @@
 
         </div>
 
-        <!-- Food Banner -->
+        <!--  Banner -->
         <div id="banner" style="background-image: url(assets/images/trail/trail.jpeg);"></div>
 
         <!-- Navbar -->
@@ -87,42 +78,60 @@
           </nav>
 <!-- ============================================================================================================ -->
     <div>
-        <div class="row">
-
-            <div class="col" id="search-bar">
-
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
+      <div class="input-group mb-3" id = "searcharea" style="background-image: url('assets/images/food/grass.jpg');">
+                    <div class="input-group-prepend" id="destination">
                         <span class="input-group-text" id="inputGroup-sizing-default">Destination</span>
                     </div>
-                        <input id="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder ="City" >
+                        <input id="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder ="Enter a City or State" >
+                        <button id="search-btn" type="button" class="btn btn-warning">Search</button>
                 </div>
 
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                      <span class="input-group-text" id="inputGroup-sizing-default">Location</span>
-                  </div>
-                      <input id="park" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder ="National Park" >
-              </div>
-
-                <button id="search-btn" type="button" class="btn btn-warning">Search</button>
-
-                <div id="trail-flow"></div>
+                
+        <div class="row" id="trail">
+          
+            <div class="col" id="search-bar">
+              <!-- <img id="trail-pics"  atl="trail photos"> -->
             </div>
+
 
             <div class="col-6" id="trail-display"> 
-                <div id="mapid"></div>
+              <div id="trail-img"></div>
+              <div id="trail-info"></div>
+              <!-- <div id="mapid"></div> -->
             </div>
-                
-            <div class="col" id="weather"> 
-              <div id="wind"></div>
-              <div id="temperature"></div>
-              <div id="humidity"></div>
-              <div id="precipitation"></div>
-              <div id="description"></div>
-              <div id="icon"></div>
-              <div id="id"></div>
-              <div id="main"></div>
+           
+            <div class="col" class="weather"> 
+              
+              <table class="weather" style = "background-image: url(assets/images/food/weatherforecast.jpg);">
+                <tr>
+                  <td colspan ="2" id="date"></td>
+                </tr>
+                <tr>
+                  <td rowspan="2" id="temperature"></td>
+                  <td id="maxtemp"></td> 
+                </tr>
+                <tr>
+                  <td id="mintemp"></td>
+                </tr>
+                <tr>
+                  <td id="icon"><img id="wicon"  atl="Weather icon"></td>
+                  <td id="humidity"></td>
+                </tr>
+                <tr>
+                  <td id="description"></td>
+                  <td id="wind"></td>
+                </tr>
+              </table>
+              <!-- <div id="wind"></div> -->
+              <!-- <div id="temperature"></div> -->
+              <!-- <div id="maxtemp"></div> -->
+              <!-- <div id="mintemp"></div> -->
+              <!-- <div id="humidity"></div> -->
+              <!-- <div id="description"></div> -->
+              <!-- <div id="icon"> -->
+                <!-- <img id="wicon"  atl="Weather icon"> -->
+              <!-- </div> -->
+            
              
             </div>
         </div>
@@ -144,7 +153,5 @@
 
       <!-- Link to javascript -->
       <script src="assets/javascript/app.js"></script>
-
->>>>>>> be91c6a8cf2d702e1115eb7df9cf9ce1d4d063d6
 </body>
 </html>

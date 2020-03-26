@@ -11,6 +11,9 @@ body {
 
 /* =======================FOOD ==============================================================================*/
 
+html {
+    font-family: 'Roboto',arial,sans-serif;
+}
 
 div#banner {
     height: 350px;
@@ -117,27 +120,131 @@ div#search-bar {
     margin: 20px;
     width: 300px;
     text-align: left;
-    border: 2px solid lightgrey;
+    border: 1px solid rgb(177, 187, 197);
     padding: 10px;
+    border-radius: 5px;
+    background-color:  rgb(245, 245, 245);
 }
 
+img#trail-photo {
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+ div#whole-container{
+    border: 1px solid black; 
+    margin-bottom: 30px;
+    padding: 10px;
+ }
 
-
-div#trail-flow {
-    background-color: yellow;
-    height:300px;
+ div#trail-name {
+    font-weight: bolder;
     margin-top: 10px;
-}
+    font-size: 25px;
+    color: steelblue;
+ }
 
-div#weather {
-    background-color: yellow;
-    margin: 20px;
-}
+ div#trail-stars {
+    margin-top: 20px;
+ }
+ div#level {
+    margin-top: 5px;
+ }
+ div#ascent {
+    margin-top: 5px;
+ }
+ div#location {
+    margin-top: 5px;
+ }
+ div#summary {
+    margin-top: 5px;
+ }
+
+
+
 div#trail-display  {
-    background-color: yellow;
+    background-color:  rgb(245, 245, 245);
     margin: 20px 0;
+    height: 1000px;
+    border: 1px solid rgb(177, 187, 197);
+    border-radius: 5px;
+    
     
 }
+
+div#searcharea {
+    width: 1000px;
+    margin: 80px auto;
+    padding: 80px;
+    border: 1px solid rgb(177, 187, 197);
+    border-radius: 5px;
+}
+
+div#trail{
+    margin-top: 50px;
+}
+
+
+
+div#trail-img {
+    height: 350px;
+    border: 1px solid rgb(177, 187, 197);
+    margin: 20px auto;
+    border-radius: 5px;
+}
+div#trail-info {
+    height: 200px;
+    border: 1px solid rgb(177, 187, 197);
+    margin-bottom: 20px;
+    border-radius: 5px;
+ 
+}
+
+
+table.weather {
+    
+    margin-top: 20px;
+    width: 300px;
+    height: 400px;
+    border-radius: 5px;
+}
+
+td#temperature{
+    font-size: 70px;
+    color: white;
+}
+
+td#mintemp {
+    
+    color: white;
+}
+td#maxtemp {
+    border-bottom: 1px solid white;
+    color: white;
+}
+td#humidity {
+    border-bottom: 1px solid white;
+    color: white;
+    padding-top: 70px;
+}
+img#wicon {
+    width: 110px;
+    color: white;
+}
+td#wind {
+    color: white; 
+}
+td#description {
+    color: white;
+    font-size: 30px;
+}
+td#date {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
 
 
 /* =========== MEMBER SIGN UP==========================================================================================*/
@@ -234,13 +341,24 @@ div#forgotu {
 div#forgotp {
     float: left;
 }
-/* =========== MEMBER SIGN IN ==========================================================================================*/
+/* =========== GEAR ==========================================================================================*/
 
 #bannergear {
     background-repeat: no-repeat;
     background-size: cover;
-    height: 350px
+    height: 350px;
 }
+
+/* =========== INTERACTIVE MAP - LEAFLET.js ==========================================================================================*/
+
+div#mapid {
+    height: 250px;
+    border-radius: 5px;
+    border: 1px solid rgb(177, 187, 197);
+}
+
+
+/* =====================================================================================================*/
 
 /*=========LOCAL SERVICES=======================================================*/
 div#bannerlocal {
@@ -249,19 +367,43 @@ div#bannerlocal {
     resize: inherit;
     height: 350px;
 }
-
-div#userresults {
-    background-color: #f6a24e;
-    height:300px;
-    margin-top: 10px;
-}
-
-div#results {
-    background-color: #f6a24e;
-    margin: 20px;
-}
-div#nearbybusiness  {
-    background-color: #f6a24e;
-    margin: 20px 0;
+div#emergency {
     
+    background-color: #f6a24e;
+    margin-top: 75px;
+    margin-right: 25px;
+    margin-left: 50px;
+    margin-bottom: 75px;
+}
+
+
+div#video {
+
+    background-color: #f6a24e;
+    margin-top: 75px;
+    margin-right: 25px;
+    margin-left: 50px;
+    margin-bottom: 75px;
+}
+div#blog {
+
+    background-color: #f6a24e;
+    margin-top: 75px;
+    margin-right: 25px;
+    margin-left: 50px;
+    margin-bottom: 75px;
+}
+
+/*====Gear=========*/
+.everythinggear {
+    image: center;
+}
+#backpackp, #tentp, #accessoriesp, #hammockp {
+font-family: 'Times New Roman', Times, serif;
+font-size: 20px;
+color: forestgreen
+}
+
+#backpacksheader {
+    color: grey;
 }
